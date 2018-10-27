@@ -25,8 +25,7 @@ def dl_progress(count, block_size, total_size):
     sys.stdout.flush()
 
 
-# for each clip in clips.txt
-for clip in open('clips.txt', 'r'):
+for clip in open(sys.argv[2], 'r'):
     slug = clip.split('/')[3].replace('\n', '')
     mp4_url, clip_title = retrieve_mp4_data(slug)
     regex = re.compile('[^a-zA-Z0-9_]')
